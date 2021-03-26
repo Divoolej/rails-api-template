@@ -16,6 +16,14 @@ rails new rails-api-template \
   --api
 ```
 
+## What's in the box?
+- Rails API
+- Grape (with grape-entity and Swagger support)
+- Sidekiq
+- Crono
+- dry-monads + takes_macro
+- A couple of linters and utilities
+
 ## Getting Started
 1) Change the application name (APP_NAME) in :
 - `config/application.rb`
