@@ -47,7 +47,6 @@ gem "sinatra", "~> 2.1.0", require: false
 # # Use shrine to handle file uploads
 # gem "shrine", "~> 3.0"
 
-
 # Third-party integrations:
 
 # # Use new relic for performance analytics
