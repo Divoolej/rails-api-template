@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+
+  api:
+    image: ${ECR_REGISTRY}/APP_NAME-staging:latest
+    restart: always
+    env_file:
+      - /home/deploy/shared/.env
+    ports:
+      - target: 3000
+        published: 80
+    environment:
+      APPLICATION: rails
+
+  workers:
+    image: ${ECR_REGISTRY}/APP_NAME-staging:latest
+    restart: always
+    env_file:
+      - /home/deploy/shared/.env
+    environment:
+      APPLICATION: sidekiq

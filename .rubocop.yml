@@ -1,0 +1,68 @@
+# This config extends the default rubocop configuration
+# https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
+
+AllCops:
+  # DisabledByDefault: true
+  NewCops: enable
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  Exclude:
+    - db/schema.rb
+    - codedeploy/**/*
+
+Bundler/GemComment:
+  Enabled: true
+  IgnoredGems:
+    - rails
+
+Metrics/BlockLength:
+  Exclude:
+    - app/controllers/api/**/*
+    - config/**/*
+    - spec/**/*
+
+Metrics/MethodLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+  Exclude:
+    - db/**/*
+
+Style/FrozenStringLiteralComment:
+  SafeAutoCorrect: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/Documentation:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/LambdaCall:
+  EnforcedStyle: braces
+
+Style/RegexpLiteral:
+  EnforcedStyle: percent_r
+
+Layout/ArgumentAlignment:
+  Exclude:
+    - config/**/*
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*

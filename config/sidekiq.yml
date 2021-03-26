@@ -1,0 +1,12 @@
+development:
+  :verbose: true
+  :concurrency: 1
+  :max_retries: 0
+staging:
+  :concurrency: 4
+  :max_retries: 5
+production:
+  :concurrency: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
+:queues:
+  - default
+  - mailers
